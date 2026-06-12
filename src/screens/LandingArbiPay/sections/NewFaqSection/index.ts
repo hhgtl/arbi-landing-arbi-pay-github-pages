@@ -1,0 +1,1 @@
+export { NewFaqSection } from "./NewFaqSection";

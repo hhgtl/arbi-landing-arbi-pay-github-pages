@@ -1,0 +1,176 @@
+.mapContainer {
+  --map-scale: 1;
+  pointer-events: none;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: calc(520px * var(--map-scale));
+  width: min(100%, calc(756px * var(--map-scale)));
+
+  @media (min-width: 1024px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (max-width: 1024px) {
+    --map-scale: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    --map-scale: 0.76;
+  }
+
+  @media (max-width: 480px) {
+    --map-scale: 0.59;
+  }
+
+  @media (max-width: 400px) {
+    --map-scale: 0.48;
+  }
+}
+
+.mapStage {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  margin-left: -378px;
+  height: 520px;
+  width: 756px;
+  transform: scale(var(--map-scale));
+  transform-origin: top center;
+
+  @media (max-width: 480px) {
+    top: 0;
+
+  }
+}
+
+// Isometric plane of the map illustration — measured from the design render.
+// Maps a flat card onto the map perspective; origin 0 0 keeps the top-left
+// corner anchored at the card's left/top position.
+$iso-transform: matrix(0.76, 0.18, -0.57, 0.53, 0, 0);
+
+.mapImage {
+  position: absolute;
+  left: 0;
+  top: 102px;
+  width: 756px;
+  height: auto;
+  transform: scale(1.6);
+  transform-origin: center;
+}
+
+.arbiPayLogo {
+  position: absolute;
+  left: 279px;
+  top: 223px;
+  z-index: 10;
+  height: 73px;
+  width: 121px;
+  transform: $iso-transform;
+  transform-origin: 0 0;
+}
+
+.countryCardsContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.floatingCard {
+  position: absolute;
+  display: flex;
+  width: 122px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  border-radius: 10px;
+  border-width: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  box-shadow:
+    0 2px 6px rgba(6, 6, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 1px 0 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.13),
+    inset -1px 0 1px rgba(0, 0, 0, 0.11);
+  backdrop-filter: blur(2px) brightness(110%);
+  -webkit-backdrop-filter: blur(2px) brightness(110%);
+  transform: $iso-transform;
+  transform-origin: 0 0;
+}
+
+.cardThailand {
+  left: 573px;
+  top: 117px;
+}
+
+.cardVietnam {
+  left: 557px;
+  top: 196px;
+}
+
+.cardMalaysia {
+  left: 529px;
+  top: 274px;
+}
+
+.cardSingapore {
+  left: 419px;
+  top: 331px;
+}
+
+.cardIndonesia {
+  left: 299px;
+  top: 387px;
+}
+
+.cardRussia {
+  left: 95px;
+  top: 170px;
+  z-index: 10;
+}
+
+.floatingCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+}
+
+.countryRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.countryFlag {
+  height: 24px;
+  width: 24px;
+}
+
+.countryName {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #07041e;
+}
+
+.currencyRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.currencyCode {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #07041e;
+}
+

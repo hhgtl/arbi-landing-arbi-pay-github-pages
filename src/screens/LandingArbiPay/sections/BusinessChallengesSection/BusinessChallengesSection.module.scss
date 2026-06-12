@@ -1,0 +1,228 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 40px;
+
+  @media (min-width: 1024px) {
+    padding-top: 48px;
+  }
+}
+
+.backgroundGlow {
+  position: absolute;
+  right: -244px;
+  top: 50%;
+  z-index: -10;
+  height: 1200px;
+  width: 1200px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(229, 241, 255, 1) 0%,
+    rgba(232, 242, 254, 0) 100%
+  );
+}
+
+.pageContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  width: 100%;
+  max-width: 1440px;
+  align-items: center;
+
+  min-height: 520px;
+  grid-template-columns: minmax(0, 579px) minmax(0, 756px);
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    align-items: start;
+    padding-left: 32px;
+    padding-right: 32px;
+
+  }
+}
+
+.contentHeader {
+  margin-top: -48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    margin-top: 0;
+
+  }
+}
+
+.heroHeading {
+  max-width: 579px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #07041e;
+  
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 26px;
+  }
+}
+
+.gradientText {
+  background-image: linear-gradient(
+    90deg,
+    rgba(39, 88, 212, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroDescription {
+  margin-top: 20px;
+  max-width: 579px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+  letter-spacing: 0;
+  color: #32323b;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+.actionsRow {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  max-width: 519px;
+  gap: 16px;
+  flex-direction: row;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 20ppx;
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 16px;
+    gap: 8px;
+
+  }
+}
+
+.actionLink {
+  flex: 1;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+.primaryButton {
+  height: auto;
+  width: 100%;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(83, 124, 227, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  padding: 12px 24px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #ffffff;
+
+  &:hover {
+    opacity: 0.95;
+  }
+}
+
+.secondaryButton {
+  position: relative;
+  height: auto;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+
+  &::before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background-image: linear-gradient(
+      270deg,
+      rgba(90, 160, 236, 1) 0%,
+      rgba(83, 124, 227, 1) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+.secondaryButtonLabel {
+  background-image: linear-gradient(
+    90deg,
+    rgba(83, 124, 227, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

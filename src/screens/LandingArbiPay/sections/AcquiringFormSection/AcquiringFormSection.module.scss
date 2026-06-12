@@ -1,0 +1,333 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.pageContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px 16px;
+
+  @media (min-width: 640px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 575px;
+    align-items: flex-start;
+    gap: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+.visualColumn {
+  position: relative;
+  display: flex;
+  min-height: 320px;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    min-height: 476px;
+  }
+}
+
+.sectionHeading {
+  max-width: 461px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: #07041e;
+}
+
+.gradientText {
+  background-image: linear-gradient(
+    90deg,
+    rgba(39, 88, 212, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.illustrationWrapper {
+  position: relative;
+  margin-top: 24px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+}
+
+.illustrationInner {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.illustrationBackground {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 368px;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url("../../../../assets/img/acquiring-form-bg.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.illustrationImage {
+  margin-top: 18.4px;
+  height: auto;
+  width: 100%;
+  max-width: 368px;
+  object-fit: cover;
+}
+
+.illustrationGlow {
+  pointer-events: none;
+  position: absolute;
+  bottom: -22px;
+  left: -72px;
+  height: 100px;
+  width: 1071px;
+  max-width: calc(100vw - 2rem);
+  border-radius: 535.5px / 50px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(27, 90, 247, 0.2) 0%,
+    rgba(83, 124, 227, 0) 100%
+  );
+}
+
+.formCard {
+  border-width: 0;
+  border-radius: 24px;
+  background-color: rgba(219, 239, 255, 0.2);
+  box-shadow:
+    0 2px 6px rgba(6, 6, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 1px 0 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.13),
+    inset -1px 0 1px rgba(0, 0, 0, 0.11);
+  backdrop-filter: blur(2px) brightness(110%);
+  -webkit-backdrop-filter: blur(2px) brightness(110%);
+}
+
+.formCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+}
+
+.formTitle {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fieldLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  align-self: stretch;
+}
+
+.labelText {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #3a3b40;
+}
+
+.requiredMark {
+  margin-top: 4px;
+  height: 6px;
+  width: 6px;
+}
+
+.textInput {
+  height: 44px;
+  border-radius: 24px;
+  border: 1px solid #e3e7ed;
+  background-color: #ffffff;
+  padding: 12px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #000000;
+  box-shadow: none;
+
+  &::placeholder {
+    color: #a0a3b2;
+  }
+}
+
+.contactField {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 24px;
+  border: 1px solid #e3e7ed;
+  background-color: #ffffff;
+  padding: 4px 4px 4px 12px;
+}
+
+.contactInput {
+  height: 36px;
+  flex: 1;
+  border-width: 0;
+  background-color: transparent;
+  padding: 0;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #a4aebe;
+  box-shadow: none;
+
+  &::placeholder {
+    color: #a4aebe;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.contactTabs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgba(166, 209, 255, 0.2);
+  padding: 4px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 1px 0 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.13),
+    inset -1px 0 1px rgba(0, 0, 0, 0.11);
+  backdrop-filter: blur(2px) brightness(110%);
+  -webkit-backdrop-filter: blur(2px) brightness(110%);
+}
+
+.contactTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  padding: 6px 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.contactTabActive {
+  background-image: linear-gradient(
+    90deg,
+    rgba(83, 124, 227, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+}
+
+.contactTabLabel {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.1px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: rgba(7, 4, 30, 0.5);
+}
+
+.contactTabLabelActive {
+  color: #ffffff;
+}
+
+.selectTrigger {
+  height: 44px;
+  border-radius: 24px;
+  border: 1px solid #e3e7ed;
+  background-color: #ffffff;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #a0a3b2;
+  box-shadow: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.submitButton {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(83, 124, 227, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  padding: 12px 24px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #ffffff;
+
+  &:hover {
+    opacity: 0.95;
+  }
+}

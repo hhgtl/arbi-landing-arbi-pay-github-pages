@@ -1,0 +1,308 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pageContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 105px;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @media (max-width: 1240px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
+}
+
+.sectionHeader {
+  flex-shrink: 0;
+  width: 331px;
+  padding-top: 12px;
+
+  @media (max-width: 1240px) {
+    width: auto;
+  }
+
+  @media (max-width: 1024px) {
+    width: auto;
+    padding-top: 0;
+  }
+
+}
+
+.sectionHeading {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  color: #07041e;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+.gradientText {
+  background-image: linear-gradient(
+    90deg,
+    rgba(39, 88, 212, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  //white-space: nowrap;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: minmax(300px, 711px) minmax(300px, 711px);
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    //grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 670px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureCard {
+  position: relative;
+  border-radius: 20px;
+  border-width: 0;
+  backdrop-filter: blur(2px) brightness(110%);
+  -webkit-backdrop-filter: blur(2px) brightness(110%);
+  background-color: rgba(219, 239, 255, 0.2);
+  box-shadow:
+    0 2px 6px rgba(6, 6, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 1px 0 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.13),
+    inset -1px 0 1px rgba(0, 0, 0, 0.11);
+
+  // Hidden until revealed by IntersectionObserver
+  opacity: 0;
+  transform: translateY(28px) scale(0.96);
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--card-reveal-delay, 0ms),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--card-reveal-delay, 0ms);
+
+  &:hover {
+    background-color: rgba(219, 240, 255, 0.4);
+    box-shadow:
+            0 6px 12px rgba(6, 6, 53, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 1px 0 0 rgba(255, 255, 255, 0.32),
+            inset 0 -1px 1px rgba(0, 0, 0, 0.13),
+            inset -1px 0 1px rgba(0, 0, 0, 0.11);
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 16px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+.featureCardVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+
+  // Once revealed, hover lift should respond instantly (no stagger delay)
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--card-reveal-delay, 0ms),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--card-reveal-delay, 0ms);
+
+  &:hover {
+    transform: translateY(-4px) scale(1);
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .cardIllustration {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.featureCardHighlighted {
+  background-color: rgba(219, 240, 255, 0.4);
+  box-shadow:
+    0 6px 12px rgba(6, 6, 53, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 1px 0 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.13),
+    inset -1px 0 1px rgba(0, 0, 0, 0.11);
+}
+
+.cardContent {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.cardTopRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cardIllustration {
+  height: 100px;
+  width: 100px;
+  flex-shrink: 0;
+  object-fit: contain;
+
+  // Pops in slightly after its card is revealed
+  opacity: 0;
+  transform: scale(0.6) rotate(-6deg);
+  transition:
+    opacity 0.5s ease calc(var(--card-reveal-delay, 0ms) + 250ms),
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)
+      calc(var(--card-reveal-delay, 0ms) + 250ms);
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  @media (max-width: 1024px) {
+    width: 90px;
+    height: 90px;
+  }
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.cardTextBlock {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.cardTitle {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  color: #07041e;
+  
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.divider {
+  height: 1px;
+  width: 32px;
+  background-color: #3a6ae2;
+  opacity: 0.3;
+}
+
+.cardDescription {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: #3f4968;
+}
+
+.badgeRow {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.categoryBadge {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 50px;
+  border-width: 0;
+  background-color: rgba(90, 160, 236, 0.2);
+  padding: 4px 8px 4px 4px;
+
+  &:hover {
+    background-color: rgba(90, 160, 236, 0.2);
+  }
+}
+
+.badgeContent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badgeIcon {
+  flex-shrink: 0;
+}
+
+.badgeLabel {
+  background-image: linear-gradient(
+    90deg,
+    rgba(39, 88, 212, 1) 48%,
+    rgba(90, 160, 236, 1) 87%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 13.2px;
+  letter-spacing: 0;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

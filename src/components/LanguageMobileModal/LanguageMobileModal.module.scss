@@ -1,0 +1,51 @@
+.panel {
+  //height: 100%;
+  background-color: #FFFFFF;
+  max-width: 100%;
+}
+
+.content {
+  padding: 8px 16px 24px 16px;
+  overflow-y: auto;
+
+}
+
+.languageMobileModal {
+  //width: 100%;
+}
+
+.title {
+  font-family: "Geist", system-ui, sans-serif;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #282828;
+}
+
+.languageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.langBtn {
+  font-family: "Geist", system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 12px 16px;
+  height: 42px;
+  width: 100%;
+
+  border-radius: 100px;
+  color: #32323B;
+  font-size: 16px;
+  font-weight: 500;
+
+  &.active {
+    color: #FFFFFF;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2758D4 0%, #5AA0EC 86.54%);
+  }
+}

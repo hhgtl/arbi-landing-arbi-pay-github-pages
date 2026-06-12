@@ -1,0 +1,214 @@
+.stepsList {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  gap: 8px;
+}
+
+.glassCard {
+  position: relative;
+  --step-card-padding-x: clamp(16px, calc(2.2857px + 1.7857vw), 28px);
+  --step-card-padding-top: clamp(16px, calc(2.2857px + 1.7857vw), 28px);
+  --step-card-padding-bottom: clamp(20px, calc(6.2857px + 1.7857vw), 32px);
+  --step-card-figma-padding-x: clamp(18px, calc(4.2857px + 1.7857vw), 30px);
+  --step-card-figma-padding-top: clamp(18px, calc(4.2857px + 1.7857vw), 30px);
+  --step-card-figma-padding-bottom: clamp(24px, calc(5.7143px + 2.381vw), 40px);
+
+  height: clamp(280px, calc(200px + 10.4167vw), 350px);
+  overflow: hidden;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  text-align: left;
+  transition:
+    flex-basis 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    flex-grow 420ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  background: #FFFFFF99;
+  box-shadow: 0px 2px 6px 0px #07073533;
+
+}
+
+.stepTabActive {
+  flex: 1 0 0%;
+  min-width: 0;
+  cursor: default;
+}
+
+.stepTabInactive {
+  flex: 0 0 120px;
+  min-width: 120px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #93c5fd;
+    background-color: #f0f7ff;
+    box-shadow:
+      0 4px 12px rgba(39, 88, 212, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+.collapsedState {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  padding: var(--step-card-padding-top) var(--step-card-padding-x)
+    var(--step-card-padding-bottom);
+  pointer-events: auto;
+  transition: opacity 180ms ease;
+}
+
+.collapsedStateHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.expandedState {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease;
+}
+
+.expandedStateVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity 220ms ease 240ms,
+    transform 220ms ease 240ms;
+}
+
+.expandedStateDefault {
+  padding: var(--step-card-padding-top) var(--step-card-padding-x)
+    var(--step-card-padding-bottom);
+}
+
+.expandedStateFigma {
+  padding: var(--step-card-figma-padding-top) var(--step-card-figma-padding-x)
+    var(--step-card-figma-padding-bottom);
+}
+
+.titleRow {
+  display: flex;
+  flex-shrink: 0;
+  //align-items: flex-end;
+  gap: 8px;
+  height: 70px;
+}
+
+.figmaTitleRow {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  //height: 35px;
+  height: 70px;
+  flex-shrink: 0;
+  //align-items: flex-end;
+  gap: 8px;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  background-image: linear-gradient(
+    90deg,
+    rgba(39, 88, 212, 1) 0%,
+    rgba(90, 160, 236, 1) 45%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35.2px;
+  letter-spacing: -1px;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: 1200px) {
+    font-size: 26px;
+  }
+}
+
+.stepTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //white-space: nowrap;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #07041e;
+  margin: 0;
+
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
+}
+
+.figmaStepTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //white-space: nowrap;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 130%;
+  color: #000000;
+  margin: 0;
+  
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
+
+
+}
+
+.contentArea {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.fixedScene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fixedSceneInner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: var(--scene-width, 560px);
+  height: var(--scene-height, 280px);
+  transform: translateX(-50%) scale(var(--scene-scale, 1));
+  transform-origin: bottom center;
+}
+
+.stepImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}

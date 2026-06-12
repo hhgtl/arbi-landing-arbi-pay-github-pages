@@ -1,0 +1,1 @@
+export { useFooterSectionContent } from "./useFooterSectionContent";

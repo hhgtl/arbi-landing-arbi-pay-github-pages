@@ -1,0 +1,143 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pageContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (min-width: 1024px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+.sectionHeading {
+  margin-top: 8.2px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: #07041e;
+  text-align: center;
+}
+
+.gradientText {
+  background-image: linear-gradient(
+    90deg,
+    rgba(39, 88, 212, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.contentBlock {
+  margin-top: 37.4px;
+  display: flex;
+  width: 100%;
+  max-width: 846px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.accordion {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordionItem {
+  overflow: hidden;
+  border-radius: 28px;
+  border-width: 0;
+  background-color: #f5f5fa;
+}
+
+.accordionTrigger {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: left;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  :global(svg) {
+    height: 24px;
+    width: 24px;
+    flex-shrink: 0;
+  }
+}
+
+.questionText {
+  font-family: 'Manrope', Helvetica, sans-serif;
+  padding-right: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.accordionContent {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  padding-top: 0;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.ctaWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.ctaButton {
+  height: auto;
+  min-height: 44px;
+  width: 100%;
+  max-width: 302px;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(83, 124, 227, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #ffffff;
+
+  &:hover {
+    opacity: 0.95;
+  }
+}

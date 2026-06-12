@@ -1,0 +1,1 @@
+export { LandingArbiPay } from "./LandingArbiPay";

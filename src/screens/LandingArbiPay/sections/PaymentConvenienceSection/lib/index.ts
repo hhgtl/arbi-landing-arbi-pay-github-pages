@@ -1,0 +1,1 @@
+export { usePaymentConvenienceSectionContent } from "./usePaymentConvenienceSectionContent";

@@ -1,0 +1,131 @@
+.widgetBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  height: 64px;
+  width: 64px;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #537CE3;
+  z-index: 11111;
+
+
+  @media (max-width: 480px) {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.floatingWidgetRoot {
+  pointer-events: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 60;
+  perspective: 900px;
+}
+
+.floatingWidgetGlow {
+  position: absolute;
+  inset: -1rem;
+  border-radius: 9999px;
+  background-image: radial-gradient(circle, rgba(83, 124, 227, 0.42) 0%, rgba(90, 160, 236, 0.3) 48%, rgba(90, 160, 236, 0) 72%);
+  --tw-blur: blur(40px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.floatingWidgetButton {
+  pointer-events: auto;
+  position: relative;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  border-width: 0px;
+  --tw-shadow: 0px 6px 22px rgba(39, 88, 212, 0.42), 0px 10px 30px rgba(83, 124, 227, 0.2), inset 0 2px 8px rgba(255, 255, 255, 0.38);
+  --tw-shadow-colored: 0px 6px 22px var(--tw-shadow-color), 0px 10px 30px var(--tw-shadow-color), inset 0 2px 8px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .floatingWidgetButton {
+    height: 72px;
+    width: 72px;
+  }
+}
+
+.floatingWidgetBlueLayer {
+  position: absolute;
+  inset: 0px;
+  border-radius: 9999px;
+  background-image: linear-gradient(165deg, #5AA0EC 0%, #537CE3 42%, #2758D4 100%);
+}
+
+.floatingWidgetGreenLayer {
+  position: absolute;
+  inset: 0px;
+  border-radius: 9999px;
+  background-image: linear-gradient(165deg, #A1C4FF 0%, #5AA0EC 48%, #537CE3 100%);
+}
+
+.floatingWidgetIconShell {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 17px;
+}
+
+@media (min-width: 640px) {
+  .floatingWidgetIconShell {
+    padding: 21px;
+  }
+}
+
+.floatingWidgetIconLayer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingWidgetIconImage {
+  height: 42%;
+  width: 42%;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  will-change: transform;
+}
+
+.darkRoot {
+  .floatingWidgetGlow {
+    background-image: radial-gradient(circle, rgba(83, 124, 227, 0.38) 0%, rgba(27, 35, 56, 0.42) 46%, rgba(83, 124, 227, 0) 74%);
+  }
+
+  .floatingWidgetButton {
+    --tw-shadow: 0px 8px 28px rgba(83, 124, 227, 0.34), 0px 14px 36px rgba(0, 0, 0, 0.48), inset 0 2px 8px rgba(255, 255, 255, 0.14);
+    --tw-ring-color: rgba(234, 242, 255, 0.22);
+  }
+
+  .floatingWidgetBlueLayer {
+    background-image: linear-gradient(165deg, #2758D4 0%, #1a3d9e 42%, #0f2557 100%);
+  }
+
+  .floatingWidgetGreenLayer {
+    background-image: linear-gradient(165deg, #A1C4FF 0%, #5AA0EC 48%, #537CE3 100%);
+  }
+}

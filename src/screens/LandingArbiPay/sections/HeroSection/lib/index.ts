@@ -1,0 +1,1 @@
+export { useHeroSectionContent } from "./useHeroSectionContent";

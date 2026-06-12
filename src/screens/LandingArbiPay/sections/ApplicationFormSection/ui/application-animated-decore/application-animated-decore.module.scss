@@ -1,0 +1,159 @@
+
+.illustrationWrapper {
+  position: relative;
+  margin-top: 0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 1023px) {
+    margin-top: 28px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 14px;
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+}
+
+.illustrationInner {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-left: 180px;
+
+  @media (max-width: 1150px) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 1023px) {
+    max-width: 368px;
+
+  }
+
+  @media (max-width: 767px) {
+    max-width: 368px;
+  }
+}
+
+.illustrationBackground {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  //aspect-ratio: 1;
+  //background-image: url("../../../../assets/img/application-form-bg.png");
+  //background-size: cover;
+  //background-position: 50% 50%;
+}
+
+$float-duration: 4s;
+
+.illustrationImageTop {
+  position: absolute;
+  top: -64px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  animation: floatUpDown $float-duration ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(-18px);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+}
+
+.illustrationImage {
+  margin-top: 5%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.illustrationGlow {
+  pointer-events: none;
+  position: absolute;
+  width: min(1071px, 180vw);
+  height: 100px;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-58%);
+  border-radius: 535.5px / 50px;
+  background: radial-gradient(
+                  50% 50% at 50% 50%,
+                  rgba(27, 90, 247, 0.2) 0%,
+                  rgba(83, 124, 227, 0) 100%
+  );
+
+  @media (max-width: 767px) {
+    height: 68px;
+    bottom: -12px;
+  }
+}
+
+.gradient {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(27, 90, 247, 0.5) 0%, rgba(83, 124, 227, 0) 100%);
+  height: 74px;
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  animation: gradientPulse $float-duration ease-in-out infinite;
+  will-change: transform, opacity;
+
+  @media (max-width: 1350px) {
+    bottom: 35px;
+    height: 35px;
+  }
+
+  @media (max-width: 1200px) {
+    height: 74px;
+    bottom: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    height: 55px;
+    bottom: 40px;
+  }
+
+  @media (max-width: 370px) {
+    height: 45px;
+    bottom: 40px;
+  }
+
+  @media (max-width: 340px) {
+    height: 40px;
+    bottom: 40px;
+  }
+}
+
+@keyframes gradientPulse {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0.3) scaleY(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}

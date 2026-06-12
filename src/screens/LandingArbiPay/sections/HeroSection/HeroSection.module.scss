@@ -1,0 +1,172 @@
+.heroHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(17, 4, 30, 0.15);
+  backdrop-filter: blur(10px) brightness(100%);
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+}
+
+.headerSpacer {
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.pageContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (min-width: 1024px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+.logoLink {
+  flex-shrink: 0;
+}
+
+.logoImage {
+  height: 32px;
+  width: 71px;
+}
+
+.mainNavigation {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  @media (max-width: 1140px) {
+    display: none;
+  }
+}
+
+.navigationList {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.1px;
+  letter-spacing: 0;
+  color: #32313a;
+  white-space: nowrap;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:hover {
+    color: #537ce3;
+  }
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (min-width: 1024px) {
+    gap: 16px;
+  }
+}
+
+.languageSelectorDesctopWrapper {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.languageSelectorMobile {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: fit-content;
+    border-radius: 100px;
+    border: 1px solid #E1E3E8;
+    background: #FFFFFF33;
+    padding: 8px 20px;
+    color: #07041E80;
+    font-weight: 600;
+  }
+}
+
+.ctaButtonLink {
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.ctaButton {
+  height: auto;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(83, 124, 227, 1) 0%,
+    rgba(90, 160, 236, 1) 100%
+  );
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: 'Manrope', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #ffffff;
+  box-shadow: none;
+
+  &:hover {
+    opacity: 0.95;
+  }
+
+  @media (min-width: 640px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+  }
+}
+
+.burgerMenu {
+  display: none;
+  background: #FFFFFF33;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+}

@@ -1,0 +1,13 @@
+.root {
+  --bottom-card-fade-z-index: 2;
+
+  position: absolute;
+  width: 552px;
+  height: 60px;
+  left: calc(50% - 276px);
+  bottom: -4px;
+  background: linear-gradient(180deg, rgba(238, 246, 255, 0) 0%, #EEF6FF 85.64%);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: var(--bottom-card-fade-z-index);
+}

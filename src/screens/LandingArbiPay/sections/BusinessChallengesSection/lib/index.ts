@@ -1,0 +1,1 @@
+export { useBusinessChallengesSectionContent } from "./useBusinessChallengesSectionContent";

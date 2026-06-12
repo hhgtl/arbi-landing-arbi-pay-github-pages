@@ -1,0 +1,1 @@
+export { useIdealCustomersSectionContent } from "./useIdealCustomersSectionContent";

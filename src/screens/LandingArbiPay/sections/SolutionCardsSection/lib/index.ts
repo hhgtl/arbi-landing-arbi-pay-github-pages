@@ -1,0 +1,1 @@
+export { useSolutionCardsSectionContent } from "./useSolutionCardsSectionContent";

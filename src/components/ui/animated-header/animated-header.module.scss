@@ -1,0 +1,37 @@
+$ease-slice: cubic-bezier(0.77, 0, 0.175, 1);
+
+.header {
+  margin: 0;
+}
+
+// Mask: hides the line until it slides up into place
+.line {
+  display: block;
+  overflow: hidden;
+}
+
+.lineInner {
+  display: inline-block;
+  transform: translate3d(0, 140%, 0);
+  opacity: 0;
+  transition:
+    transform 0.4s ease,
+    opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.visible .lineInner {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  transition:
+    transform 0.7s $ease-slice,
+    opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lineInner {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}

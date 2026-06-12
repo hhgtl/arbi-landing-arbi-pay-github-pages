@@ -1,0 +1,35 @@
+.main {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.sectionFirst {
+  @media (min-width: 1024px) {
+    margin-bottom: 88px;
+  }
+}
+
+.sectionSpaced {
+  margin-bottom: 160px;
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 80px;
+  }
+}

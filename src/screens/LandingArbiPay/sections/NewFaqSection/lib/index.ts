@@ -1,0 +1,1 @@
+export { useNewFaqSectionContent } from "./useNewFaqSectionContent";

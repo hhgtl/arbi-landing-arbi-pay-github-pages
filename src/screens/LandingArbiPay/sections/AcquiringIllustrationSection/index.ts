@@ -1,0 +1,1 @@
+export { AcquiringIllustrationSection } from "./AcquiringIllustrationSection";
